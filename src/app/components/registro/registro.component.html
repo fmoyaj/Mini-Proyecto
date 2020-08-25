@@ -1,0 +1,25 @@
+<div style="margin: 2em auto; padding: 2em; width: 50%" class="mat-elevation-z8">
+    <h3>Regístrate</h3>
+    <p>Crea tu portafolio y despega tu carrera profesional</p>
+    <form>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Nombre</mat-label>
+            <input matInput #nombre required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Correo</mat-label>
+            <input matInput type="email" #email required placeholder="example@email.com">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" #contrasena required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Nombre de tu portafolio</mat-label>
+            <input matInput #portafolio required placeholder="Ejemplo: Diseño UX/UI">
+            <mat-hint>Respetamos tu privacidad al no compartir tu correo con terceros</mat-hint>
+        </mat-form-field>
+        <button mat-raised-button color="primary" style="margin: 1em;">Enviar</button>
+        <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
+    </form>
+</div>
