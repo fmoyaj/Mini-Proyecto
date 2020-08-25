@@ -1,3 +1,15 @@
+<mat-toolbar color="primary">
+    <span routerLink="" style="cursor: pointer;">Binder</span>
+    <span class="example-spacer"></span>
+      <a mat-flat-button color= "primary" style="margin-left: 1em;" routerLink="">
+        Inicio
+      </a>
+      <a mat-flat-button color= "primary" style="margin-left: 1em;" routerLink="">
+        Iniciar Sesión
+      </a>
+  </mat-toolbar>
+
+
 <div style="margin: 2em auto; padding: 2em; width: 50%" class="mat-elevation-z8">
     <h3>Regístrate</h3>
     <p>Crea tu portafolio y despega tu carrera profesional</p>
@@ -12,7 +24,8 @@
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Contraseña</mat-label>
-            <input matInput type="password" #contrasena required>
+            <input matInput type="password" required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
+            title="Debe contener al menos un número, una letra mayúscula o minúscula. 4 caracteres mínimo.">
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Nombre de tu portafolio</mat-label>
