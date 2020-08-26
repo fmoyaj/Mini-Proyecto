@@ -9,6 +9,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import { MatSelectModule } from "@angular/material/select";
+import { MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [],
@@ -24,7 +26,9 @@ import {MatTableModule} from '@angular/material/table';
     MatTabsModule,
     MatGridListModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatIconModule
   ]
 })
 export class AppMaterialModule { }
