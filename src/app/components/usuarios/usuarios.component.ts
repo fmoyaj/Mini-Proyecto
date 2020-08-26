@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/usuario.service';
+import { Usuarios } from 'src/app/models/usuarios';
+
 
 @Component({
   selector: 'app-usuarios',
@@ -6,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
+  constructor(private usuarioService: UsuarioService ) { }
+  usuarios: Usuarios[] =[];
 
   estudiantes = [
     {rut: '1-9', nombre:'perrito', apellido:'gonzalez', correo:'a@gmail.com'},
@@ -13,15 +18,15 @@ export class UsuariosComponent implements OnInit {
     {rut: '1-9', nombre:'perrito', apellido:'gonzalez', correo:'a@gmail.com'}
   ]
 
-  usuarios = [{nombre: 'Pepita', correo: 'pepita@gmail.com', contrasenha: 'abcde4g', binder: 'Diseño 2020'} ]
+
 
   columnasAMostrar2 = ['nombre', 'correo', 'contrasenha', 'binder', 'boton']
 
   columnasAMostrar = ['rut', 'nombre', 'apellido', 'correo', 'boton']
 
-  constructor() { }
 
   ngOnInit(): void {
+    this.usuarioService.obtenerUsuarios().subscribe(usuarios => this.usuarios= usuarios);
   }
 
   eliminar(i:number){
