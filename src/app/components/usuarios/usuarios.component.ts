@@ -24,5 +24,10 @@ export class UsuariosComponent implements OnInit {
     this.usuario.splice(i, 1);
     console.log(this.usuario);
   }
+
+  agregarUsuario(nombre:string, correo:string, contrasenha:string, binder:string): void{
+    this.usuarioService.agregarUsuario({nombre, correo, contrasenha, binder} as Usuario).subscribe(usuario => {this.usuario.push(usuario);
+    });
+  }
 }
 

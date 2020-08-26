@@ -15,5 +15,12 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.usuarioURL)
   }
 
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  };
+
+  agregarUsuario(usuario: Usuario): Observable<Usuario>{
+    return this.http.post<Usuario>(this.usuarioURL, usuario, this.httpOptions)
+  }
 
 }
