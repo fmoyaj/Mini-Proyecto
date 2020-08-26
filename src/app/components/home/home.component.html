@@ -12,4 +12,25 @@
       además podrás acceder a ellos desde cualquier dispositivo móvil. <br>
       Te ayudará a mostrarle al mundo de lo que eres capaz!</p>
       <h2>¡Comienza ahora a crear!</h2>
-                  </div>
+</div>
+
+
+<div style="margin: 5em auto; padding: 2em; width: 50%" class="mat-elevation-z8 sesion">
+  <h3>Inicia Sesión</h3>
+  <form>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label class="label">Correo</mat-label>
+          <input matInput type="email" #email required placeholder="example@email.com">
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label class="label">Contraseña</mat-label>
+          <input matInput type="password" required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
+          title="Debe contener al menos un número, una letra mayúscula o minúscula. 4 caracteres mínimo.">
+      </mat-form-field>
+      <button mat-raised-button color="primary" style="margin: 1em;">Enviar</button>
+      <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
+  </form>
+</div>
+
+
+

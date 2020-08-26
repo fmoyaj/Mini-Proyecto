@@ -1,39 +1,31 @@
-<div style="width: 70%; margin: 1em auto;"class="mat-elevation-z2">
-    <mat-table [dataSource]="usuarios">
+<div style="width: 70%; margin: 1em auto;" class="mat-elevation-z2">
+    <mat-table [dataSource]="usuario">
         <ng-container matColumnDef="nombre">
-            <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
-            <mat-cell *matCellDef="let usuario">{{usuario.nombre}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef> Nombre</mat-header-cell>
+            <mat-cell *matCellDef="let usuario"> {{usuario.nombre}} </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="correo">
-            <mat-header-cell *matHeaderCellDef>Correo Electrónico</mat-header-cell>
-            <mat-cell *matCellDef="let usuario">{{usuario.correo}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+            <mat-cell *matCellDef="let usuario"> {{usuario.correo}} </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="contrasenha">
-            <mat-header-cell *matHeaderCellDef>Contraseña</mat-header-cell>
-            <mat-cell *matCellDef="let usuario">{{usuario.contrasenha}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef> Contrasenha </mat-header-cell>
+            <mat-cell *matCellDef="let usuario"> {{usuario.contrasenha}} </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="binder">
-            <mat-header-cell *matHeaderCellDef>Nombre de binder</mat-header-cell>
-            <mat-cell *matCellDef="let usuario">{{usuario.binder}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef> Binder </mat-header-cell>
+            <mat-cell *matCellDef="let usuario"> {{usuario.binder}} </mat-cell>
         </ng-container>
-
-        <mat-header-row *matHeaderRowDef="columnasAMostrar2"></mat-header-row>
-        <mat-row *matRowDef="let infoFilas; columns: columnasAMostrar2"></mat-row>
-
         <ng-container matColumnDef="boton">
             <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>
-            <mat-cell *matCellDef="let usuario; index as i">
+            <mat-cell *matCellDef="let estudiante; index as i">
                 <button mat-mini-fab color="warn" (click)="eliminar(i)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </mat-cell>
         </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+        <mat-row *matRowDef="let myRowData; columns: columnas"></mat-row>
     </mat-table>
-
-    <button mat-mini-fab color="warn" (click)="eliminar(0)"></button>
 </div>
-
-<button mat-button (click)="eliminar(0)" >Hola</button>

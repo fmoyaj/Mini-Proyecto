@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from 'src/app/usuario.service';
-import { Usuarios } from 'src/app/models/usuarios';
-
+import { Usuario } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-usuarios',
@@ -9,28 +8,21 @@ import { Usuarios } from 'src/app/models/usuarios';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent implements OnInit {
-  constructor(private usuarioService: UsuarioService ) { }
-  usuarios: Usuarios[] =[];
 
-  estudiantes = [
-    {rut: '1-9', nombre:'perrito', apellido:'gonzalez', correo:'a@gmail.com'},
-    {rut: '1-9', nombre:'perrito', apellido:'gonzalez', correo:'a@gmail.com'},
-    {rut: '1-9', nombre:'perrito', apellido:'gonzalez', correo:'a@gmail.com'}
-  ]
+  constructor (private usuarioService: UsuarioService) {}
 
-
-
-  columnasAMostrar2 = ['nombre', 'correo', 'contrasenha', 'binder', 'boton']
-
-  columnasAMostrar = ['rut', 'nombre', 'apellido', 'correo', 'boton']
-
+  usuario: Usuario[]=[];
 
   ngOnInit(): void {
-    this.usuarioService.obtenerUsuarios().subscribe(usuarios => this.usuarios= usuarios);
+    this.usuarioService.obtenerUsuarios().subscribe(usuario => this.usuario = usuario)
   }
 
-  eliminar(i:number){
-    this.estudiantes.splice(i,1);
-  }
+  
+  columnas = ['nombre', 'correo', 'contrasenha', 'binder', 'boton']
 
+  eliminar(i: number){
+    this.usuario.splice(i, 1);
+    console.log(this.usuario);
+  }
 }
+

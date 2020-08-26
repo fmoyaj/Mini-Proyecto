@@ -5,20 +5,20 @@
     <form>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Nombre</mat-label>
-            <input matInput #nombre required>
+            <input matInput #nombre required class="inputText">
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Correo</mat-label>
-            <input matInput type="email" #email required placeholder="example@email.com">
+            <input matInput type="email" #email required placeholder="example@email.com" class="inputText">
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Contraseña</mat-label>
-            <input matInput type="password" required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
+            <input matInput class="inputText" type="password" required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
             title="Debe contener al menos un número, una letra mayúscula o minúscula. 4 caracteres mínimo.">
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Nombre de tu portafolio</mat-label>
-            <input matInput #portafolio required placeholder="Ejemplo: Diseño UX/UI">
+            <input matInput #portafolio required placeholder="Ejemplo: Diseño UX/UI" class="inputText">
             <mat-hint>Respetamos tu privacidad al no compartir tu correo con terceros</mat-hint>
         </mat-form-field>
         <button mat-raised-button color="primary" style="margin: 1em;">Enviar</button>
