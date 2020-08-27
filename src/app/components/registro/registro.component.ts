@@ -8,22 +8,23 @@ import { Usuario } from 'src/app/models/usuario';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-  nombre: string;
-  correo: string;
-  contrasenha: string;
-  binder: string;
-
+  
   constructor (private usuarioService: UsuarioService) {}
 
-  usuario: Usuario[]=[];
+  
+  usuario: Usuario = {
+    nombre: '',
+    correo: '',
+    contrasenha: '',
+    binder: ''
+}
 
 
   ngOnInit(): void {
   }
 
-  agregarUsuario(nombre, correo, contrasenha, binder): void{
-    this.usuarioService.agregarUsuario({nombre, correo, contrasenha, binder} as Usuario).subscribe(usuario => {this.usuario.push(usuario);
-    });
+  agregarUsuario(): void{
+    this.usuarioService.agregarUsuario(this.usuario).subscribe();
   }
 
 }

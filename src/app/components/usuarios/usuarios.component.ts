@@ -20,14 +20,23 @@ export class UsuariosComponent implements OnInit {
   
   columnas = ['nombre', 'correo', 'contrasenha', 'binder', 'boton']
 
-  eliminar(i: number){
-    this.usuario.splice(i, 1);
-    console.log(this.usuario);
-  }
 
   agregarUsuario(nombre:string, correo:string, contrasenha:string, binder:string): void{
     this.usuarioService.agregarUsuario({nombre, correo, contrasenha, binder} as Usuario).subscribe(usuario => {this.usuario.push(usuario);
     });
+  }
+
+  eliminar(i){
+    const email = this.usuario[i].correo
+    this.usuarioService.borrarUsuario(email).subscribe(_=>this.obtenerUsuarios());
+    this.usuario.splice(1);
+    console.log(this.usuario);
+  }
+ 
+  
+  obtenerUsuarios() {
+    this.usuarioService.obtenerUsuarios()
+      .subscribe(usuarios => this.usuario = usuarios);
   }
 }
 

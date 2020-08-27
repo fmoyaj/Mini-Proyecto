@@ -20,7 +20,11 @@ export class UsuarioService {
   };
 
   agregarUsuario(usuario: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>(this.usuarioURL, usuario, this.httpOptions)
+    return this.http.post<Usuario>(this.usuarioURL+"add/", usuario, this.httpOptions)
+  }
+
+  borrarUsuario(correo: String) {
+    return this.http.delete(`${this.usuarioURL}usuarios/eliminar/${correo}`);
   }
 
 }
