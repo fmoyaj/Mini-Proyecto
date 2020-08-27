@@ -24,8 +24,7 @@
       </mat-form-field>
       <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label class="label">Contraseña</mat-label>
-          <input matInput type="password" required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
-          title="Debe contener al menos un número, una letra mayúscula o minúscula. 4 caracteres mínimo.">
+          <input matInput type="password" required placeholder="contraseña" [(ngModel)]="contrasenha" name = 'contrasenha'>
       </mat-form-field>
       <button mat-raised-button color="primary" style="margin: 1em;" (click)="verificar()">Enviar</button>
       <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
