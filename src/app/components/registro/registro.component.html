@@ -9,7 +9,7 @@
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Correo</mat-label>
-            <input matInput type="email" #email required placeholder="example@email.com" class="inputText" [(ngModel)]="usuario.correo" name = 'correo'>
+            <input matInput #email required placeholder="example@email.com" class="inputText" [(ngModel)]="usuario.correo" name = 'correo'>
         </mat-form-field>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Contraseña</mat-label>
@@ -20,7 +20,7 @@
             <input matInput #binder required placeholder="Ejemplo: Diseño UX/UI" class="inputText" [(ngModel)]="usuario.binder" name = 'binder'>
             <mat-hint>Respetamos tu privacidad al no compartir tu correo con terceros</mat-hint>
         </mat-form-field>
-        <button mat-raised-button type="submit"color="primary" style="margin: 1em;" (click)="agregarUsuario()">Enviar</button>
+        <button mat-raised-button type="submit"color="primary" style="margin: 1em;" (click)="agregarUsuario()" routerLink=""> Enviar</button>
         <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
     </form>
 </div>

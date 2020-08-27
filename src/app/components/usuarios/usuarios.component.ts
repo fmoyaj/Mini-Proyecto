@@ -29,8 +29,9 @@ export class UsuariosComponent implements OnInit {
   eliminar(i){
     const email = this.usuario[i].correo
     this.usuarioService.borrarUsuario(email).subscribe(_=>this.obtenerUsuarios());
-    this.usuario.splice(1);
+    this.usuarioService.borrarUsuario(email).subscribe();
     console.log(this.usuario);
+    console.log(email);
   }
  
   
