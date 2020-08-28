@@ -23,6 +23,15 @@ export class RegistroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  validarDatos(): void {
+    if (!this.usuario.correo){
+      alert("Ingrese un correo")
+    }
+  }
+
+ 
+  
+
   agregarUsuario(): void{
     this.usuarioService.agregarUsuario(this.usuario).subscribe();
   }

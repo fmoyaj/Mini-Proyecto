@@ -20,7 +20,7 @@
             <input matInput #binder required placeholder="Ejemplo: Diseño UX/UI" class="inputText" [(ngModel)]="usuario.binder" name = 'binder'>
             <mat-hint>Respetamos tu privacidad al no compartir tu correo con terceros</mat-hint>
         </mat-form-field>
-        <button mat-raised-button type="submit"color="primary" style="margin: 1em;" (click)="agregarUsuario()" routerLink=""> Enviar</button>
+        <button mat-raised-button type="submit"color="primary" style="margin: 1em;" (click)="agregarUsuario(); validarDatos();" routerLink=""> Enviar</button>
         <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
     </form>
 </div>
