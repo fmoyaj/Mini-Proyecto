@@ -30,3 +30,7 @@ p{
 .label{
     color: rgb(163, 33, 76);
 }
+
+.paragraph {
+    text-justify: distribute;
+}

@@ -30,3 +30,29 @@
         <mat-row *matRowDef="let myRowData; columns: columnas"></mat-row>
     </mat-table>
 </div>
+
+<div style="margin: 2em auto; padding: 2em; width: 50%" class="mat-elevation-z8">
+    <h3 style="color: white;">Modificar usuario</h3>
+    <form>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Nombre</mat-label>
+            <input matInput required class="inputText" [(ngModel)]="usuarioUnico.nombre" name = 'nombre'>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Correo</mat-label>
+            <input matInput type="email" #email required placeholder="example@email.com" class="inputText" [(ngModel)]="usuarioUnico.correo" name = 'correo'>
+            <mat-hint>El correo no se puede modificar. Ingrese un correo existente en la base de datos.</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Contraseña</mat-label>
+            <input matInput class="inputText" required [(ngModel)]="usuarioUnico.contrasenha" name = 'contrasenha'> 
+            <mat-hint>La contraseña debe contener al menos una letra y un número, y de un largo de al menos 4 caracteres</mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Nuevo nombre de Binder</mat-label>
+            <input matInput #portafolio required class="inputText" [(ngModel)]="usuarioUnico.binder" name = 'binder'>
+        </mat-form-field>
+        <button mat-raised-button color="primary" style="margin: 1em;"(click)="update()">Modificar</button>
+        <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
+    </form>
+</div>

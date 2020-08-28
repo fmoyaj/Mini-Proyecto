@@ -13,6 +13,13 @@ export class UsuariosComponent implements OnInit {
 
   usuario: Usuario[]=[];
 
+  usuarioUnico: Usuario = {
+    nombre: '',
+    correo: '',
+    contrasenha: '',
+    binder: ''
+}
+
   ngOnInit(): void {
     this.usuarioService.obtenerUsuarios().subscribe(usuario => this.usuario = usuario)
   }
@@ -20,11 +27,11 @@ export class UsuariosComponent implements OnInit {
   
   columnas = ['nombre', 'correo', 'contrasenha', 'binder', 'boton']
 
-
+/* 
   agregarUsuario(nombre:string, correo:string, contrasenha:string, binder:string): void{
     this.usuarioService.agregarUsuario({nombre, correo, contrasenha, binder} as Usuario).subscribe(usuario => {this.usuario.push(usuario);
     });
-  }
+  } */
 
   eliminar(i){
     const email = this.usuario[i].correo
@@ -39,5 +46,11 @@ export class UsuariosComponent implements OnInit {
     this.usuarioService.obtenerUsuarios()
       .subscribe(usuarios => this.usuario = usuarios);
   }
+
+  update(){
+    this.usuarioService.actualizarUsuario(this.usuarioUnico, this.usuarioUnico.correo).subscribe(_=>this.obtenerUsuarios());
+    this.usuarioService.actualizarUsuario(this.usuarioUnico, this.usuarioUnico.correo).subscribe();
+  }
+
 }
 

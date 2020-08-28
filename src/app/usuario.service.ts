@@ -27,4 +27,9 @@ export class UsuarioService {
     return this.http.delete(`${this.usuarioURL}eliminar/${correo}`, this.httpOptions);
   }
 
+
+  actualizarUsuario(usuario: Usuario, correo: String): Observable<Usuario>{
+    return this.http.put<Usuario>(`${this.usuarioURL}update/${correo}`, usuario, this.httpOptions);
+  }
+
 }
